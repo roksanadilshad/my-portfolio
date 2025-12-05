@@ -126,15 +126,17 @@ const Home = () => {
                   <span>View My Work</span>
                   <FaRocket className="group-hover:translate-x-1 transition-transform" />
                 </button>
-                <button
-                  onClick={() => scrollToSection('#contact')}
+                <a
+                  href="https://drive.google.com/uc?export=download&id=1eHs89ofnHb55whrRSWSWiD8-0gZRAHCD"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="group px-8 py-4 bg-white dark:bg-slate-800 text-slate-800 dark:text-white border-2 border-slate-300 dark:border-slate-700 rounded-lg hover:border-primary hover:text-primary transition-all duration-300 flex items-center space-x-2 font-medium"
                 >
-                  <span>Get In Touch</span>
-                  <span className="material-symbols-outlined group-hover:translate-x-1 transition-transform">
-                    arrow_forward
+                  <span>Download Resume</span>
+                  <span className="material-symbols-outlined group-hover:translate-y-1 transition-transform">
+                    download
                   </span>
-                </button>
+                </a>
               </div>
 
               {/* Quick Stats */}

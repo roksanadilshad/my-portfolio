@@ -98,6 +98,9 @@ const About = () => {
               <p>
                 My goal is simple: build meaningful products that help people, look great, and run fast. I'm eager to bring my skills to a professional team and continue growing as a developer. When I'm not coding, I explore UI trends, learn new technologies, and work on personal projects to sharpen my creativity.
               </p>
+              <p>
+                Motivated BBA student majoring in Marketing at National University, with a strong interest in digital branding and creative problem-solving. Passionate about learning, building meaningful projects, and growing my professional skills.
+              </p>
             </div>
 
             {/* Expertise Tags */}

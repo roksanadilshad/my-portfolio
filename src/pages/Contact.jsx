@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter, FaDiscord, FaPaperPlane } from 'react-icons/fa'
+import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter, FaDiscord, FaPaperPlane, FaFacebook, FaWhatsapp } from 'react-icons/fa'
 import emailjs from 'emailjs-com'
 
 const Contact = () => {
@@ -77,6 +77,13 @@ const Contact = () => {
       value: 'roksanadilshad@gmail.com',
       link: 'mailto:roksanadilshad@gmail.com',
       color: 'text-red-500',
+    },
+    {
+      icon: FaWhatsapp,
+      label: 'WhatsApp',
+      value: '+880 1909 180630',
+      link: 'https://wa.me/8801909180630',
+      color: 'text-green-600',
     },
     {
       icon: FaDiscord,
@@ -164,6 +171,7 @@ const Contact = () => {
                 {[
                   { icon: FaGithub, link: 'https://github.com/roksanadilshad' },
                   { icon: FaLinkedin, link: 'https://linkedin.com/in/roksanadilshad' },
+                  { icon: FaFacebook, link: 'https://www.facebook.com/roksana.dilshad' },
                   { icon: FaTwitter, link: 'https://twitter.com/roksanadilshad' },
                   { icon: FaDiscord, link: 'https://discord.com/users/roksanadilshad' },
                 ].map((social, index) => {

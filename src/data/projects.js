@@ -2,8 +2,10 @@ export const projectsData = [
   {
     id: 1,
     title: 'Import Export Hub',
+    shortDescription:
+      'A full-featured web platform designed to streamline global trade operations by connecting importers and exporters.',
     description:
-      'Import Export Hub is a full-featured web platform designed to streamline global trade operations by connecting importers and exporters in one convenient space. It provides tools for managing products, tracking transactions, and maintaining efficient business communication.',
+      'Import Export Hub is a comprehensive web platform that revolutionizes global trade operations. It connects importers and exporters in one convenient space, providing powerful tools for managing products, tracking transactions, and maintaining efficient business communication. The platform features user authentication, product management, real-time updates, and a responsive design that works seamlessly across all devices.',
     image: 'https://i.ibb.co/TD4w1S27/import-export-jpg.png',
     technologies: [
       'React',
@@ -15,14 +17,30 @@ export const projectsData = [
       'Firebase',
       'JWT',
     ],
+    mainTech: ['React', 'Node.js', 'MongoDB'],
     liveLink: 'https://assignment-10-dad5c.web.app/',
     githubLink: 'https://github.com/roksanadilshad/import-export-hub-latest.git',
+    challenges: [
+      'Implementing secure authentication with JWT and Firebase',
+      'Managing complex state for product listings and transactions',
+      'Optimizing database queries for large datasets',
+      'Creating a responsive design that works across all devices',
+    ],
+    improvements: [
+      'Add real-time chat functionality between buyers and sellers',
+      'Implement advanced search filters and sorting options',
+      'Add payment gateway integration',
+      'Create a mobile app version using React Native',
+      'Add multi-language support for international users',
+    ],
   },
   {
     id: 2,
     title: 'Eventify',
+    shortDescription:
+      'A modern event management platform for creating, managing, and browsing events with ease.',
     description:
-      'Eventify is a modern event management web application built with Next.js, Firebase, and MongoDB. It allows users to create, manage, and browse events with ease. The platform features user authentication, event search, and an intuitive dashboard for managing events.',
+      'Eventify is a cutting-edge event management web application that simplifies the process of organizing and discovering events. Built with Next.js for optimal performance and SEO, it offers users the ability to create, manage, and browse events effortlessly. The platform includes user authentication, event search functionality, an intuitive dashboard, and real-time updates. Perfect for event organizers, attendees, and anyone looking to stay connected with their community.',
     image: 'https://i.ibb.co/dR8Y2Cx/event-management.png',
     technologies: [
       'Next.js',
@@ -32,14 +50,30 @@ export const projectsData = [
       'Tailwind CSS',
       'Firebase',
     ],
+    mainTech: ['Next.js', 'MongoDB', 'Firebase'],
     liveLink: 'https://event-management-next-fscg.vercel.app/',
     githubLink: 'https://github.com/roksanadilshad/Event_Management_Next.git',
+    challenges: [
+      'Implementing server-side rendering with Next.js for better SEO',
+      'Managing event state and real-time updates',
+      'Creating an intuitive event creation and management flow',
+      'Handling image uploads and optimization',
+    ],
+    improvements: [
+      'Add calendar integration (Google Calendar, Outlook)',
+      'Implement ticket booking and payment system',
+      'Add event reminder notifications via email/SMS',
+      'Create event analytics dashboard for organizers',
+      'Add social sharing features for events',
+    ],
   },
   {
     id: 3,
     title: 'WarmPaws – Pet Care in Winter',
+    shortDescription:
+      'A responsive web app helping pet owners keep their furry friends warm and healthy during winter.',
     description:
-      'WarmPaws is a modern and responsive web application designed to help furry friends stay warm, safe, and healthy during the cold season. Users can explore local pet care services, winter pet clothing, grooming options, and expert tips — all within a friendly, easy-to-use interface.',
+      'WarmPaws is a comprehensive pet care platform specifically designed for the winter season. This modern and responsive web application helps pet owners ensure their furry friends stay warm, safe, and healthy during cold weather. Users can explore local pet care services, browse winter pet clothing options, find grooming services, and access expert tips for winter pet care. The platform features a user-friendly interface with smooth animations, interactive elements, and a beautiful design that makes pet care information easily accessible.',
     image: 'https://i.ibb.co/Kz5zjnPM/warmPaw.png',
     technologies: [
       'React',
@@ -51,7 +85,21 @@ export const projectsData = [
       'Swiper',
       'React Spinners',
     ],
+    mainTech: ['React', 'Firebase', 'Tailwind CSS'],
     liveLink: 'https://warmpaws-pet-care-in-win-cb915.web.app/',
     githubLink: 'https://github.com/roksanadilshad/warmPaw-pet-care.git',
+    challenges: [
+      'Integrating Lottie animations for smooth user experience',
+      'Implementing Swiper for interactive product carousels',
+      'Managing Firebase authentication and database',
+      'Creating responsive layouts for various screen sizes',
+    ],
+    improvements: [
+      'Add e-commerce functionality for pet products',
+      'Implement appointment booking for pet services',
+      'Add user reviews and ratings for services',
+      'Create a blog section for pet care tips',
+      'Add location-based service recommendations',
+    ],
   },
 ]

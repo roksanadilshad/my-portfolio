@@ -1,6 +1,8 @@
 import { projectsData } from '../data/projects'
+import { useNavigate } from 'react-router-dom'
 
 const Projects = () => {
+  const navigate = useNavigate()
   return (
     <div id="projects" className="py-20">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -97,26 +99,22 @@ const Projects = () => {
 
                 {/* Action Buttons */}
                 <div className="flex gap-3 pt-4 border-t border-slate-200 dark:border-slate-800">
+                  <button
+                    onClick={() => navigate(`/project/${project.id}`)}
+                    className="flex-1 px-4 py-2 bg-primary text-white text-center text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                  >
+                    <span>View Details</span>
+                    <span className="material-symbols-outlined text-base">arrow_forward</span>
+                  </button>
                   {project.liveLink && (
                     <a
                       href={project.liveLink}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex-1 px-4 py-2 bg-primary text-white text-center text-sm font-medium rounded-lg hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
+                      className="px-4 py-2 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-center text-sm font-medium rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors flex items-center justify-center gap-2"
+                      title="Live Demo"
                     >
-                      <span>Live Demo</span>
-                      <span className="material-symbols-outlined text-base">arrow_outward</span>
-                    </a>
-                  )}
-                  {project.githubLink && (
-                    <a
-                      href={project.githubLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 px-4 py-2 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 text-center text-sm font-medium rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors flex items-center justify-center gap-2"
-                    >
-                      <span>Code</span>
-                      <span className="material-symbols-outlined text-base">code</span>
+                      <span className="material-symbols-outlined text-base">open_in_new</span>
                     </a>
                   )}
                 </div>
