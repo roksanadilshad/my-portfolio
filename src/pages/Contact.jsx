@@ -1,15 +1,19 @@
 import { useEffect, useRef, useState } from 'react'
 import { FaEnvelope, FaGithub, FaLinkedin, FaTwitter, FaDiscord, FaPaperPlane } from 'react-icons/fa'
+import emailjs from 'emailjs-com'
 
 const Contact = () => {
   const contactRef = useRef(null)
   const formRef = useRef(null)
   const infoRef = useRef(null)
+  const emailFormRef = useRef(null)
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     message: '',
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -38,10 +42,32 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    // Add your form submission logic here (EmailJS, etc.)
-    console.log('Form submitted:', formData)
-    alert('Message sent! I will get back to you soon.')
-    setFormData({ name: '', email: '', message: '' })
+    setIsSubmitting(true)
+    setSubmitStatus(null)
+
+    // EmailJS configuration
+    const serviceID = 'service_o9298k5'
+    const templateID = 'template_3tan5z2'
+    const userID = '5br2_KIVs_xNmVohZ'
+
+    emailjs
+      .sendForm(serviceID, templateID, emailFormRef.current, userID)
+      .then(
+        (result) => {
+          console.log('Email sent successfully:', result.text)
+          setSubmitStatus('success')
+          setFormData({ name: '', email: '', message: '' })
+          setTimeout(() => setSubmitStatus(null), 5000)
+        },
+        (error) => {
+          console.error('Email send failed:', error.text)
+          setSubmitStatus('error')
+          setTimeout(() => setSubmitStatus(null), 5000)
+        }
+      )
+      .finally(() => {
+        setIsSubmitting(false)
+      })
   }
 
   const contactMethods = [
@@ -164,7 +190,20 @@ const Contact = () => {
               <h3 className="text-2xl font-semibold text-slate-800 dark:text-white mb-6">
                 Send Me a Message
               </h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
+
+              {/* Success/Error Messages */}
+              {submitStatus === 'success' && (
+                <div className="p-4 bg-green-100 dark:bg-green-900/30 border border-green-500 rounded-lg text-green-700 dark:text-green-400 text-sm">
+                  ✓ Message sent successfully! I'll get back to you soon.
+                </div>
+              )}
+              {submitStatus === 'error' && (
+                <div className="p-4 bg-red-100 dark:bg-red-900/30 border border-red-500 rounded-lg text-red-700 dark:text-red-400 text-sm">
+                  ✗ Failed to send message. Please try emailing me directly at roksanadilshad@gmail.com
+                </div>
+              )}
+
+              <form ref={emailFormRef} onSubmit={handleSubmit} className="space-y-6">
                 {/* Name Input */}
                 <div>
                   <label
@@ -228,10 +267,17 @@ const Contact = () => {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full group flex items-center justify-center space-x-2 px-6 py-4 bg-primary text-white rounded-lg hover:bg-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 font-medium"
+                  disabled={isSubmitting}
+                  className={`w-full group flex items-center justify-center space-x-2 px-6 py-4 rounded-lg transition-all duration-300 shadow-lg font-medium ${
+                    isSubmitting
+                      ? 'bg-slate-400 cursor-not-allowed'
+                      : 'bg-primary hover:bg-purple-700 hover:shadow-xl hover:scale-105'
+                  } text-white`}
                 >
-                  <span>Send Message</span>
-                  <FaPaperPlane className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+                  {!isSubmitting && (
+                    <FaPaperPlane className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                  )}
                 </button>
               </form>
             </div>

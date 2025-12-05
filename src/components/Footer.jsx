@@ -69,14 +69,23 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-8">
           {/* Brand Section */}
           <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <span className="material-symbols-outlined text-primary text-2xl">
-                code
-              </span>
-              <h3 className="text-xl font-display font-bold text-slate-800 dark:text-white">
+            {/* Logo */}
+          <div className="flex items-center space-x-3 group cursor-pointer">
+            <div className="relative">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
+                <span className="material-symbols-outlined text-white text-xl">
+                  code
+                </span>
+              </div>
+              <div className="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full border-2 border-white dark:border-slate-900 animate-pulse"></div>
+            </div>
+            <div>
+              <h3 className="text-lg font-bold text-slate-800 dark:text-white group-hover:text-primary transition-colors">
                 Roksana
               </h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">Frontend Developer</p>
             </div>
+          </div>
             <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
               Frontend Developer crafting beautiful and functional web experiences. Based in Bangladesh.
             </p>
