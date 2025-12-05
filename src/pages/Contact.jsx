@@ -104,7 +104,7 @@ const Contact = () => {
                       href={method.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center space-x-4 p-4 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-all duration-300"
+                      className="group flex flex-col lg:flex-row md:flex-row items-center space-x-4 p-4 rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700/50 transition-all duration-300"
                     >
                       <div className={`${method.color} text-2xl group-hover:scale-110 transition-transform`}>
                         <Icon />

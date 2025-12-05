@@ -36,8 +36,8 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-50 bg-white/80 dark:bg-[#0A0A0A]/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
-      <div className="container mx-auto px-6 md:px-8 py-6">
-        <div className="flex justify-between items-center gap-8">
+      <div className="container mx-auto lg:px-6 px-3 md:px-8 py-6">
+        <div className="flex justify-between items-center lg:gap-8 gap-4">
           <div className="flex items-center space-x-2">
               <span className="material-symbols-outlined text-primary text-2xl">
                 code
