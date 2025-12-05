@@ -1,0 +1,173 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-[#0A0A0A] text-slate-800 dark:text-slate-300 font-sans antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-4 py-2 border border-slate-400 dark:border-slate-500 text-slate-800 dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 border border-primary text-primary hover:bg-primary hover:text-white transition-colors;
+  }
+
+  .btn-elegant {
+    @apply flex items-center space-x-3;
+  }
+
+  .btn-elegant-text {
+    @apply font-medium text-slate-800 dark:text-white underline decoration-transparent transition-all duration-300;
+  }
+
+  .btn-elegant-icon {
+    @apply w-10 h-10 bg-slate-800 dark:bg-white rounded-full flex items-center justify-center transition-transform;
+  }
+
+  .section-title {
+    @apply text-3xl font-bold mb-12 text-slate-900 dark:text-white;
+  }
+
+  .section-title::before {
+    content: '#';
+    @apply text-primary mr-1;
+  }
+
+  .circular-text {
+    animation: rotate 10s linear infinite;
+    transform-origin: center;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Fade in animation */
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Slide up animation */
+  .animate-slide-up {
+    animation: slideUp 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Tech badge animation */
+  .animate-tech-badge {
+    animation: techBadgePop 0.6s ease-out forwards;
+  }
+
+  @keyframes techBadgePop {
+    0% {
+      opacity: 0;
+      transform: scale(0.5) rotate(-10deg);
+    }
+    60% {
+      transform: scale(1.1) rotate(5deg);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
+    }
+  }
+
+  /* Generic visible animation for skill cards and stats */
+  .animate-visible {
+    animation: fadeInUp 0.8s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Skill card specific animation */
+  .skill-category-card.animate-visible {
+    animation: cardFlipIn 0.8s ease-out forwards;
+  }
+
+  @keyframes cardFlipIn {
+    from {
+      opacity: 0;
+      transform: perspective(1000px) rotateY(-20deg) translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: perspective(1000px) rotateY(0) translateY(0);
+    }
+  }
+
+  /* Stat card animation - alternate sides */
+  .stat-card:nth-child(odd).animate-visible {
+    animation: slideInLeft 0.8s ease-out forwards;
+  }
+
+  .stat-card:nth-child(even).animate-visible {
+    animation: slideInRight 0.8s ease-out forwards;
+  }
+
+  @keyframes slideInLeft {
+    from {
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
