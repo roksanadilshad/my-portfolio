@@ -44,7 +44,7 @@ const About = () => {
     {
       icon: FaRocket,
       title: 'Focus',
-      description: 'Frontend Development & UI/UX Design',
+      description: 'Full Stack Development & UI/UX Design',
     },
     {
       icon: FaMapMarkerAlt,
@@ -83,17 +83,17 @@ const About = () => {
                 Hello, I'm <span className="text-primary">Roksana</span>!
               </h3>
               <p className="text-lg text-slate-600 dark:text-slate-400 leading-relaxed">
-                A dedicated <span className="font-semibold text-slate-800 dark:text-white">Frontend Developer</span> with a strong focus on building modern, user-friendly, and visually polished web applications.
+                A dedicated <span className="font-semibold text-slate-800 dark:text-white">Full Stack Developer</span> with a strong focus on building modern, user-friendly, and visually polished web applications.
               </p>
             </div>
 
             {/* Description */}
             <div className="space-y-4 text-slate-600 dark:text-slate-400 leading-relaxed">
               <p>
-                I enjoy transforming ideas into real digital experiences using <span className="font-medium text-primary">React</span>, <span className="font-medium text-primary">Tailwind CSS</span>, <span className="font-medium text-primary">JavaScript</span>, and clean UI/UX principles.
+                I enjoy transforming ideas into real digital experiences using <span className="font-medium text-primary">React</span>, <span className="font-medium text-primary">Node.js</span>, <span className="font-medium text-primary">MongoDB</span>, and modern web technologies across the full stack.
               </p>
               <p>
-                I've built several personal projects including booking systems, pet-care platforms, event management apps, and dynamic dashboards. Through these projects, I've developed strong problem-solving skills and learned to create interfaces that feel smooth and intuitive.
+                I've built several full-stack projects including booking systems, pet-care platforms, event management apps, and dynamic dashboards. Through these projects, I've developed strong problem-solving skills in both frontend and backend development, creating complete, scalable web applications.
               </p>
               <p>
                 My goal is simple: build meaningful products that help people, look great, and run fast. I'm eager to bring my skills to a professional team and continue growing as a developer. When I'm not coding, I explore UI trends, learn new technologies, and work on personal projects to sharpen my creativity.
@@ -140,7 +140,7 @@ const About = () => {
               {/* Main Image */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800">
                 <img
-                  alt="Roksana - Frontend Developer"
+                  alt="Roksana - Full Stack Developer"
                   className="w-full max-w-md h-auto object-cover"
                   src="https://i.pinimg.com/1200x/1e/e6/54/1ee654f04d664cf6d985c4fd8996a38e.jpg"
                 />

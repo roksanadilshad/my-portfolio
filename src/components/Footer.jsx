@@ -87,7 +87,7 @@ const Footer = () => {
             </div>
           </div>
             <p className="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
-              Frontend Developer crafting beautiful and functional web experiences. Based in Bangladesh.
+              Full Stack Developer crafting beautiful and functional web experiences. Based in Bangladesh.
             </p>
             <div className="flex items-center space-x-2 text-sm text-slate-600 dark:text-slate-400">
               <span className="material-symbols-outlined text-base">location_on</span>

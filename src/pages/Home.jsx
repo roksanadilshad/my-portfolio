@@ -108,7 +108,7 @@ const Home = () => {
                   <span className="text-primary">Roksana</span>
                 </h1>
                 <h2 className="text-3xl md:text-4xl font-semibold text-slate-700 dark:text-slate-300">
-                  Frontend Developer
+                  Full Stack Developer
                 </h2>
               </div>
 
@@ -168,7 +168,7 @@ const Home = () => {
                 {/* Main Image Container */}
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 transform hover:scale-105 transition-transform duration-500">
                   <img
-                    alt="Roksana - Frontend Developer"
+                    alt="Roksana - Full Stack Developer"
                     className="w-full max-w-md h-auto object-cover"
                     src={myImg}
                   />

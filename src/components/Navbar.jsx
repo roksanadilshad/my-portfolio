@@ -69,7 +69,7 @@ const Navbar = () => {
               <h3 className="text-lg font-bold text-slate-800 dark:text-white group-hover:text-primary transition-colors">
                 Roksana
               </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400">Frontend Developer</p>
+              <p className="text-xs text-slate-500 dark:text-slate-400">Full Stack Developer</p>
             </div>
           </div>
 
