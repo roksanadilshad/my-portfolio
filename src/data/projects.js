@@ -42,7 +42,7 @@ export const projectsData = [
       'A full-featured web platform designed to streamline global trade operations by connecting importers and exporters.',
     description:
       'Import Export Hub is a comprehensive web platform that revolutionizes global trade operations. It connects importers and exporters in one convenient space, providing powerful tools for managing products, tracking transactions, and maintaining efficient business communication. The platform features user authentication, product management, real-time updates, and a responsive design that works seamlessly across all devices.',
-    image: 'https://i.ibb.co/TD4w1S27/import-export-jpg.png',
+    image: 'https://i.ibb.co.com/DfD4Kcxd/import-export-hub-latest-73qy-vercel-app-3.png',
     technologies: [
       'React',
       'Node.js',
@@ -54,7 +54,7 @@ export const projectsData = [
       'JWT',
     ],
     mainTech: ['React', 'Node.js', 'MongoDB'],
-    liveLink: 'https://assignment-10-dad5c.web.app/',
+    liveLink: 'https://import-export-hub-latest-73qy.vercel.app/',
     githubLink: 'https://github.com/roksanadilshad/import-export-hub-latest.git',
     challenges: [
       'Implementing secure authentication with JWT and Firebase',
@@ -77,7 +77,7 @@ export const projectsData = [
       'A modern event management platform for creating, managing, and browsing events with ease.',
     description:
       'Eventify is a cutting-edge event management web application that simplifies the process of organizing and discovering events. Built with Next.js for optimal performance and SEO, it offers users the ability to create, manage, and browse events effortlessly. The platform includes user authentication, event search functionality, an intuitive dashboard, and real-time updates. Perfect for event organizers, attendees, and anyone looking to stay connected with their community.',
-    image: 'https://i.ibb.co/dR8Y2Cx/event-management.png',
+    image: 'https://i.ibb.co.com/pjb0RTrW/event-management-next-fscg-vercel-app-1.png',
     technologies: [
       'Next.js',
       'Node.js',
@@ -110,7 +110,7 @@ export const projectsData = [
       'A responsive web app helping pet owners keep their furry friends warm and healthy during winter.',
     description:
       'WarmPaws is a comprehensive pet care platform specifically designed for the winter season. This modern and responsive web application helps pet owners ensure their furry friends stay warm, safe, and healthy during cold weather. Users can explore local pet care services, browse winter pet clothing options, find grooming services, and access expert tips for winter pet care. The platform features a user-friendly interface with smooth animations, interactive elements, and a beautiful design that makes pet care information easily accessible.',
-    image: 'https://i.ibb.co/Kz5zjnPM/warmPaw.png',
+    image: 'https://i.ibb.co.com/3YYhpy9f/warmpaws-pet-care-in-win-cb915-web-app.png',
     technologies: [
       'React',
       'React Router DOM',
