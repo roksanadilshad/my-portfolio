@@ -1,6 +1,42 @@
 export const projectsData = [
   {
     id: 1,
+    title: 'Club Sphere',
+    shortDescription:
+      'A multi-tier community management ecosystem designed to centralize campus engagement through role-based access and integrated payments.',
+    description:
+      'Club Sphere is a sophisticated SaaS-style platform that streamlines how organizations interact with students. It features a robust Role-Based Access Control (RBAC) system with three distinct user types: Admin, Club Manager, and Member. The platform empowers clubs to monetize through premium memberships and paid event registrations, while providing members with a centralized dashboard to track their involvement, event history, and secure payment transactions.',
+    image: 'https://i.ibb.co.com/pjMvyh9Y/club-sphere-client-new-62n4-vercel-app-1.png', 
+    technologies: [
+      'React',
+      'Node.js',
+      'Express',
+      'MongoDB',
+      'Tailwind CSS',
+      'Daisy UI',
+      'Firebase',
+      'JWT',
+      'Stripe',
+    ],
+    mainTech: ['React', 'Node.js', 'MongoDB', 'Firebase'],
+    liveLink: 'https://club-sphere-client-new-62n4.vercel.app/',
+    githubLink: 'https://github.com/roksanadilshad/clubSphere-client-new.git', 
+    challenges: [
+      'Architecting a secure Role-Based Access Control (RBAC) system for Admins, Managers, and Members.',
+      'Integrating a secure payment gateway for club memberships and event ticketing.',
+      'Designing a complex database schema to link users to specific clubs, events, and payment histories.',
+      'Ensuring real-time state updates across different user dashboards after successful transactions.',
+    ],
+    improvements: [
+      'Implement an automated email notification system for event reminders and payment receipts.',
+      'Add a real-time group chat feature for club members to enhance community engagement.',
+      'Introduce an analytics dashboard for Club Managers to track member growth and revenue.',
+      'Develop a QR-code based check-in system for event attendance tracking.',
+    ],
+}
+  ,
+  {
+    id: 2,
     title: 'Import Export Hub',
     shortDescription:
       'A full-featured web platform designed to streamline global trade operations by connecting importers and exporters.',
@@ -35,7 +71,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     title: 'Eventify',
     shortDescription:
       'A modern event management platform for creating, managing, and browsing events with ease.',
@@ -68,7 +104,7 @@ export const projectsData = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     title: 'WarmPaws – Pet Care in Winter',
     shortDescription:
       'A responsive web app helping pet owners keep their furry friends warm and healthy during winter.',
