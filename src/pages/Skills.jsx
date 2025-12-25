@@ -1,233 +1,130 @@
-import { useEffect, useRef } from 'react'
-import {
-  FaPalette,
-  FaCode,
-  FaCss3Alt,
-  FaBolt,
-  FaReact,
-  FaCog,
-  FaNodeJs,
-  FaDatabase,
-  FaPlug,
-  FaTools,
-  FaGithub,
-  FaFire,
-  FaFigma,
-  FaLaptopCode,
-  FaCalendarAlt,
-  FaRocket,
-  FaStar,
-  FaCheckCircle,
-} from 'react-icons/fa'
-import { SiNextdotjs, SiTailwindcss, SiExpress, SiMongodb } from 'react-icons/si'
+import React from 'react';
+import { motion } from 'framer-motion';
+import { 
+  FaCode, FaServer, FaTools, FaReact, FaNodeJs, 
+  FaGithub, FaDatabase, FaLayerGroup 
+} from 'react-icons/fa';
+import { SiJavascript, SiNextdotjs, SiTailwindcss, SiMongodb, SiExpress, SiFirebase } from 'react-icons/si';
+
+// Animation variants for staggered entrance
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 }
+  }
+};
+
+const itemVariants = {
+  hidden: { y: 20, opacity: 0 },
+  visible: { y: 0, opacity: 1, transition: { duration: 0.5, ease: "easeOut" } }
+};
 
 const Skills = () => {
-  const skillsRef = useRef(null)
-  const techBadgesRef = useRef(null)
-  const skillCardsRef = useRef(null)
-  const statsRef = useRef(null)
-
-  const skillCategories = [
-    {
-      title: 'Frontend Development',
-      icon: FaPalette,
-      color: 'from-blue-500 to-cyan-500',
-      skills: [
-        { name: 'HTML5', level: 95 },
-        { name: 'CSS3', level: 90 },
-        { name: 'JavaScript', level: 90 },
-        { name: 'React', level: 85 },
-        { name: 'Next.js', level: 80 },
-        { name: 'Tailwind CSS', level: 88 },
-      ],
-    },
-    {
-      title: 'Backend Development',
-      icon: FaCog,
-      color: 'from-green-500 to-emerald-500',
-      skills: [
-        { name: 'Node.js', level: 85 },
-        { name: 'Express.js', level: 82 },
-        { name: 'MongoDB', level: 80 },
-        { name: 'REST APIs', level: 85 },
-      ],
-    },
-    {
-      title: 'Tools & Technologies',
-      icon: FaTools,
-      color: 'from-purple-500 to-pink-500',
-      skills: [
-        { name: 'Git & GitHub', level: 88 },
-        { name: 'Firebase', level: 75 },
-        { name: 'Figma', level: 70 },
-        { name: 'VS Code', level: 90 },
-      ],
-    },
-  ]
-
-  const technologies = [
-    { name: 'HTML5', icon: FaCode },
-    { name: 'CSS3', icon: FaCss3Alt },
-    { name: 'JavaScript', icon: FaBolt },
-    { name: 'React', icon: FaReact },
-    { name: 'Next.js', icon: SiNextdotjs },
-    { name: 'Node.js', icon: FaNodeJs },
-    { name: 'Express', icon: SiExpress },
-    { name: 'MongoDB', icon: SiMongodb },
-    { name: 'Tailwind', icon: SiTailwindcss },
-    { name: 'Firebase', icon: FaFire },
-    { name: 'Git', icon: FaGithub },
-    { name: 'Figma', icon: FaFigma },
-  ]
-
-  const stats = [
-    { number: '10+', label: 'Personal Projects', icon: FaCalendarAlt },
-    { number: '12+', label: 'Technologies Learned', icon: FaBolt },
-    { number: '100%', label: 'Commitment to Learning', icon: FaRocket },
-    { number: '∞', label: 'Passion for Coding', icon: FaStar },
-  ]
-
-  // CSS animations on scroll
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('animate-visible')
-          }
-        })
-      },
-      { threshold: 0.1 }
-    )
-
-    // Animate tech badges
-    const badges = techBadgesRef.current?.querySelectorAll('.tech-badge')
-    badges?.forEach((badge) => observer.observe(badge))
-
-    // Animate skill cards
-    const cards = skillCardsRef.current?.querySelectorAll('.skill-category-card')
-    cards?.forEach((card) => observer.observe(card))
-
-    // Animate stats
-    const statsElements = statsRef.current?.querySelectorAll('.stat-card')
-    statsElements?.forEach((stat) => observer.observe(stat))
-
-    return () => observer.disconnect()
-  }, [])
+  const mainSkills = [
+    { name: 'Frontend', icon: <FaReact />, desc: 'React, Next.js, Framer Motion', color: 'text-blue-400', glow: 'group-hover:shadow-blue-500/20' },
+    { name: 'Backend', icon: <FaServer />, desc: 'Node, Express, Rest APIs', color: 'text-emerald-400', glow: 'group-hover:shadow-emerald-500/20' },
+    { name: 'Database', icon: <FaDatabase />, desc: 'MongoDB, Firebase, SQL', color: 'text-purple-400', glow: 'group-hover:shadow-purple-500/20' },
+  ];
 
   return (
-    <div id="skills" className="py-20 bg-white dark:bg-[#0A0A0A]" ref={skillsRef}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="section-title">Skills & Expertise</h2>
-          <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
-            Technologies and tools I use to bring ideas to life
-          </p>
-        </div>
+    <section id="skills" className="py-24 bg-[#050505] text-white relative overflow-hidden">
+      {/* Background Decorative Glow */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
 
-        {/* Skills Categories Grid */}
-        <div className="skills-grid grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20" ref={skillCardsRef}>
-          {skillCategories.map((category, categoryIndex) => {
-            const CategoryIcon = category.icon
-            return (
-              <div
-                key={categoryIndex}
-                className="skill-category-card opacity-0 bg-slate-50 dark:bg-slate-900/50 rounded-2xl p-8 shadow-lg hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 transition-all duration-300 border border-slate-200 dark:border-slate-800 group"
-                style={{ animationDelay: `${categoryIndex * 0.2}s` }}
-              >
-                {/* Category Header */}
-                <div className="flex items-center space-x-4 mb-8">
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${category.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform`}>
-                    <CategoryIcon className="text-2xl text-white" />
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-800 dark:text-white">
-                    {category.title}
-                  </h3>
-                </div>
+      <div className="container mx-auto px-6 relative z-10">
+        <header className="mb-16 space-y-2">
+          <motion.span 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className="text-primary font-mono tracking-tighter"
+          >
+            02. Expertise
+          </motion.span>
+          <motion.h3 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="text-4xl md:text-6xl font-black tracking-tight"
+          >
+            Technical <span className="text-slate-500">Stack.</span>
+          </motion.h3>
+        </header>
 
-                {/* Skills List */}
-                <div className="space-y-5">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="group/skill">
-                      <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center space-x-2">
-                          <FaCheckCircle className="text-primary text-sm" />
-                          <span className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                            {skill.name}
-                          </span>
-                        </div>
-                        <span className="text-xs font-bold text-primary bg-primary/10 px-2 py-1 rounded">
-                          {skill.level}%
-                        </span>
-                      </div>
-                      {/* Progress Bar */}
-                      <div className="h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden">
-                        <div
-                          className={`h-full bg-gradient-to-r ${category.color} rounded-full transition-all duration-1000`}
-                          style={{ width: `${skill.level}%` }}
-                        ></div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          className="grid grid-cols-1 md:grid-cols-4 gap-4"
+        >
+          {/* Main Service Cards */}
+          {mainSkills.map((skill, idx) => (
+            <motion.div 
+              key={idx}
+              variants={itemVariants}
+              whileHover={{ scale: 1.02 }}
+              className={`group p-8 rounded-[2rem] bg-slate-900/40 border border-slate-800 backdrop-blur-sm transition-all duration-300 ${skill.glow} hover:border-slate-700 shadow-xl`}
+            >
+              <div className={`text-4xl ${skill.color} mb-6 transition-transform group-hover:scale-110 duration-500`}>
+                {skill.icon}
               </div>
-            )
-          })}
-        </div>
+              <h4 className="text-xl font-bold mb-2">{skill.name}</h4>
+              <p className="text-slate-500 text-sm leading-relaxed">{skill.desc}</p>
+            </motion.div>
+          ))}
 
-        {/* Technology Stack Section */}
-        <div className="tech-stack-section mb-20" ref={techBadgesRef}>
-          <h3 className="text-2xl font-bold text-center text-slate-800 dark:text-white mb-8">
-            Technology Stack
-          </h3>
-          <div className="flex flex-wrap justify-center gap-4">
-            {technologies.map((tech, index) => {
-              const TechIcon = tech.icon
-              return (
-                <div
-                  key={index}
-                  className="tech-badge group relative px-6 py-4 bg-white dark:bg-slate-900 border-2 border-slate-200 dark:border-slate-800 rounded-xl hover:border-primary hover:shadow-xl hover:shadow-primary/20 hover:-translate-y-1 transition-all duration-300 cursor-default opacity-0"
-                  style={{ animationDelay: `${index * 0.05}s` }}
-                >
-                  <div className="flex items-center space-x-3">
-                    <TechIcon className="text-xl text-slate-600 dark:text-slate-400 group-hover:text-primary transition-colors" />
-                    <span className="text-sm font-semibold text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors">
-                      {tech.name}
-                    </span>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
+          {/* Experience Stat - Dark Minimalist */}
+          <motion.div 
+            variants={itemVariants}
+            className="p-8 rounded-[2rem] bg-primary flex flex-col justify-center items-center text-center group transition-colors"
+          >
+            <span className="text-6xl font-black text-white group-hover:scale-110 transition-transform">10+</span>
+            <p className="text-[10px] uppercase tracking-[0.2em] font-bold text-white/80 mt-2">Projects Delivered</p>
+          </motion.div>
 
-        {/* Stats Section */}
-        <div className="stats-grid grid grid-cols-2 md:grid-cols-4 gap-6" ref={statsRef}>
-          {stats.map((stat, index) => {
-            const StatIcon = stat.icon
-            return (
-              <div
-                key={index}
-                className="stat-card opacity-0 text-center p-8 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900/50 dark:to-slate-800/50 rounded-2xl border border-slate-200 dark:border-slate-800 hover:border-primary hover:shadow-2xl hover:shadow-primary/10 hover:-translate-y-2 hover:scale-105 transition-all duration-300 group cursor-default"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-primary/10 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <StatIcon className="text-3xl text-primary" />
-                </div>
-                <div className="text-4xl font-bold text-primary mb-2 group-hover:scale-110 transition-transform">
-                  {stat.number}
-                </div>
-                <div className="text-sm font-medium text-slate-600 dark:text-slate-400">
-                  {stat.label}
-                </div>
-              </div>
-            )
-          })}
-        </div>
+          {/* Large Tech Stack Bento */}
+          <motion.div 
+            variants={itemVariants}
+            className="md:col-span-3 p-10 rounded-[2rem] bg-slate-900/20 border border-slate-800/50 backdrop-blur-md flex flex-wrap gap-8 justify-around items-center"
+          >
+            <TechIcon Icon={SiJavascript} name="JS" color="text-yellow-400" />
+            <TechIcon Icon={SiNextdotjs} name="Next" color="text-white" />
+            <TechIcon Icon={SiTailwindcss} name="Tailwind" color="text-cyan-400" />
+            <TechIcon Icon={SiMongodb} name="Mongo" color="text-green-500" />
+            <TechIcon Icon={SiExpress} name="Express" color="text-slate-400" />
+            <TechIcon Icon={FaNodeJs} name="Node" color="text-green-400" />
+            <TechIcon Icon={FaGithub} name="GitHub" color="text-white" />
+          </motion.div>
+
+          {/* Learning Commitment Card */}
+          <motion.div 
+            variants={itemVariants}
+            className="md:col-span-1 p-8 rounded-[2rem] border border-dashed border-slate-700 flex items-center gap-4 group"
+          >
+            <div className="w-12 h-12 rounded-full bg-slate-800 flex items-center justify-center animate-pulse">
+               <FaCode className="text-primary" />
+            </div>
+            <div>
+              <p className="text-sm font-bold">Continuous Learning</p>
+              <p className="text-[10px] text-slate-500 uppercase font-mono">Exploring: Web3 & AI</p>
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
-    </div>
-  )
-}
+    </section>
+  );
+};
 
-export default Skills
+// Sub-component for Tech Icons
+const TechIcon = ({ Icon, name, color }) => (
+  <div className="flex flex-col items-center gap-2 group cursor-pointer">
+    <div className={`text-4xl text-slate-600 transition-all duration-300 group-hover:-translate-y-2 group-hover:filter group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.3)] ${color.replace('text', 'group-hover:text')}`}>
+      <Icon />
+    </div>
+    <span className="text-[10px] font-bold text-slate-700 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
+      {name}
+    </span>
+  </div>
+);
+
+export default Skills;
