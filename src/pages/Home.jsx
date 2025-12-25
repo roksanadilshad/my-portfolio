@@ -88,117 +88,128 @@ const Home = () => {
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/5 rounded-full blur-3xl float-element"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl float-element" style={{ animationDelay: '1s' }}></div>
       </div>
+
       {/* Hero Section */}
-<section className="relative min-h-screen flex items-center justify-center py-20 lg:py-0 overflow-hidden bg-slate-50 dark:bg-[#0B0F1A]">
-  {/* Abstract Background Shapes for Visual Interest */}
-  <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-    <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[120px]" />
-    <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-500/5 rounded-full blur-[120px]" />
-  </div>
-
-  <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      
-      {/* Left Column - Content */}
-      <div className="space-y-10 text-center lg:text-left">
-        {/* Status Badge */}
-        <div className="hero-badge inline-flex items-center space-x-2 px-4 py-2 bg-white/50 dark:bg-slate-800/50 backdrop-blur-md border border-slate-200 dark:border-slate-700 rounded-full shadow-sm">
-          <span className="relative flex h-3 w-3">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
-          </span>
-          <span className="text-xs md:text-sm font-semibold tracking-wide uppercase text-slate-600 dark:text-slate-300">
-            Available for new projects
-          </span>
-        </div>
-
-        {/* Main Heading */}
-        <div className="hero-title space-y-4">
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-slate-900 dark:text-white tracking-tight leading-[1.1]">
-            Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-400">Roksana</span>
-          </h1>
-          <h2 className="text-2xl md:text-4xl font-medium text-slate-500 dark:text-slate-400 font-mono">
-            &lt;FullStackDeveloper /&gt;
-          </h2>
-        </div>
-
-        {/* Description */}
-        <p className="hero-description text-lg md:text-xl text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl mx-auto lg:mx-0">
-          I build high-performance, accessible, and visually stunning web applications. Turning complex problems into elegant, user-centric digital solutions.
-        </p>
-
-        {/* CTA Buttons */}
-        <div className="hero-buttons flex flex-wrap justify-center lg:justify-start gap-5">
-          <button
-            onClick={() => scrollToSection('#projects')}
-            className="group px-10 py-4 bg-primary text-white rounded-xl hover:bg-primary/90 transition-all duration-300 shadow-[0_10px_20px_rgba(124,58,237,0.3)] hover:shadow-primary/40 hover:-translate-y-1 flex items-center space-x-3 font-bold"
-          >
-            <span>Explore Work</span>
-            <FaRocket className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-          </button>
-          
-          <a
-            href="https://drive.google.com/uc?export=download&id=YOUR_ID"
-            className="group px-10 py-4 bg-transparent text-slate-900 dark:text-white border-2 border-slate-200 dark:border-slate-800 rounded-xl hover:border-primary/50 transition-all duration-300 flex items-center space-x-3 font-bold backdrop-blur-sm"
-          >
-            <span>Get Resume</span>
-            <span className="material-symbols-outlined group-hover:animate-bounce">download</span>
-          </a>
-        </div>
-
-        {/* Trust/Quick Stats */}
-        <div className="hero-stats flex justify-center lg:justify-start gap-10 pt-6 border-t border-slate-200 dark:border-slate-800/50 max-w-md mx-auto lg:mx-0">
-          <div>
-            <p className="text-3xl font-black text-slate-900 dark:text-white">10+</p>
-            <p className="text-xs uppercase tracking-widest text-slate-500 font-bold">Projects</p>
-          </div>
-          <div className="w-[1px] bg-slate-200 dark:bg-slate-800"></div>
-          <div>
-            <p className="text-3xl font-black text-slate-900 dark:text-white">12+</p>
-            <p className="text-xs uppercase tracking-widest text-slate-500 font-bold">Stack</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Right Column - Image with Interactive Feel */}
-      <div className="hero-image relative flex justify-center lg:justify-end perspective-1000">
-        <div className="relative group">
-          {/* Animated Glow Behind Image */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-600 rounded-[2rem] blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
-          
-          <div className="relative rounded-[2rem] overflow-hidden shadow-2xl border border-white/10 transform transition-all duration-700 group-hover:scale-[1.02]">
-            <img
-              alt="Roksana"
-              className="w-full max-w-sm md:max-w-md h-auto object-cover"
-              src={myImg}
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-60"></div>
-          </div>
-
-          {/* Floating Experience Badge */}
-          <div className="absolute -bottom-6 -right-6 lg:-right-10 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl rounded-2xl shadow-2xl p-5 border border-white/20 animate-float">
-            <div className="flex items-center space-x-4">
-              <div className="p-3 rounded-xl bg-primary/20">
-                <FaLaptopCode className="text-primary text-2xl" />
+      <section className="relative py-20 lg:py-32">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left Column - Content */}
+            <div className="space-y-8">
+              {/* Badge */}
+              <div className="hero-badge inline-flex items-center space-x-2 px-4 py-2 bg-primary/10 border border-primary/20 rounded-full">
+                <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
+                <span className="text-sm font-medium text-primary">Available for opportunities</span>
               </div>
-              <div>
-                <p className="text-sm font-black text-slate-900 dark:text-white leading-none">Creative</p>
-                <p className="text-[10px] uppercase tracking-tighter text-slate-500 font-bold mt-1">Full-Stack Dev</p>
+
+              {/* Main Heading */}
+              <div className="hero-title space-y-4">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 dark:text-white leading-tight">
+                  Hi, I'm{' '}
+                  <span className="text-primary">Roksana</span>
+                </h1>
+                <h2 className="text-3xl md:text-4xl font-semibold text-slate-700 dark:text-slate-300">
+                  Full Stack Developer
+                </h2>
+              </div>
+
+              {/* Description */}
+              <p className="hero-description text-lg text-slate-600 dark:text-slate-400 leading-relaxed max-w-xl">
+                I craft beautiful, responsive, and user-friendly web applications using modern technologies. Passionate about creating seamless digital experiences that make a difference.
+              </p>
+
+              {/* CTA Buttons */}
+              <div className="hero-buttons flex flex-wrap gap-4">
+                <button
+                  onClick={() => scrollToSection('#projects')}
+                  className="group px-8 py-4 bg-primary text-white rounded-lg hover:bg-purple-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 flex items-center space-x-2 font-medium"
+                >
+                  <span>View My Work</span>
+                  <FaRocket className="group-hover:translate-x-1 transition-transform" />
+                </button>
+                <a
+                  href="https://drive.google.com/uc?export=download&id=1eHs89ofnHb55whrRSWSWiD8-0gZRAHCD"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group px-8 py-4 bg-white dark:bg-slate-800 text-slate-800 dark:text-white border-2 border-slate-300 dark:border-slate-700 rounded-lg hover:border-primary hover:text-primary transition-all duration-300 flex items-center space-x-2 font-medium"
+                >
+                  <span>Download Resume</span>
+                  <span className="material-symbols-outlined group-hover:translate-y-1 transition-transform">
+                    download
+                  </span>
+                </a>
+              </div>
+
+              {/* Quick Stats */}
+              <div className="hero-stats flex flex-wrap gap-8 pt-4">
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <FaCode className="text-primary text-xl" />
+                  </div>
+                  <div>
+                    <p className="text-2xl font-bold text-slate-800 dark:text-white">10+</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">Projects</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <FaLaptopCode className="text-primary text-xl" />
+                  </div>
+                  <div>
+                    <p className="text-2xl font-bold text-slate-800 dark:text-white">12+</p>
+                    <p className="text-sm text-slate-600 dark:text-slate-400">Technologies</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column - Image */}
+            <div className="hero-image relative flex justify-center lg:justify-end">
+              <div className="relative">
+                {/* Main Image Container */}
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 transform hover:scale-105 transition-transform duration-500">
+                  <img
+                    alt="Roksana - Full Stack Developer"
+                    className="w-full max-w-md h-auto object-cover"
+                    src={myImg}
+                  />
+                  {/* Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/20 via-transparent to-transparent"></div>
+                </div>
+
+                {/* Decorative Elements */}
+                <div className="absolute -top-6 -right-6 w-24 h-24 bg-primary/20 rounded-full blur-2xl"></div>
+                <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-purple-500/20 rounded-full blur-2xl"></div>
+
+                {/* Floating Badge */}
+                <div className="absolute -bottom-4 -left-4 bg-white dark:bg-slate-800 rounded-2xl shadow-xl p-4 border border-slate-200 dark:border-slate-700 transform hover:scale-110 transition-transform">
+                  <div className="flex items-center space-x-3">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <FaRocket className="text-primary text-xl" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-slate-800 dark:text-white">
+                        Ready to Work
+                      </p>
+                      <p className="text-xs text-slate-500 dark:text-slate-400">
+                        Let's build together
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
 
-  {/* Refined Scroll Indicator */}
-  <div className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center">
-    <div className="w-6 h-10 border-2 border-slate-400 dark:border-slate-600 rounded-full flex justify-center p-1">
-      <div className="w-1 h-2 bg-primary rounded-full animate-scroll-dot"></div>
-    </div>
-  </div>
-</section>
+        {/* Scroll Indicator */}
+        <button
+          onClick={() => scrollToSection('#projects')}
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center space-y-2 animate-bounce cursor-pointer hover:text-primary transition-colors group"
+        >
+          <span className="text-sm text-slate-500 dark:text-slate-400 group-hover:text-primary">Scroll to explore</span>
+          <FaArrowDown className="text-primary text-xl" />
+        </button>
+      </section>
     </div>
   )
 }
