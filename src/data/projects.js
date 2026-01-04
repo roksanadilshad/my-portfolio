@@ -42,7 +42,7 @@ export const projectsData = [
       'A full-featured web platform designed to streamline global trade operations by connecting importers and exporters.',
     description:
       'Import Export Hub is a comprehensive web platform that revolutionizes global trade operations. It connects importers and exporters in one convenient space, providing powerful tools for managing products, tracking transactions, and maintaining efficient business communication. The platform features user authentication, product management, real-time updates, and a responsive design that works seamlessly across all devices.',
-    image: 'https://i.ibb.co.com/DfD4Kcxd/import-export-hub-latest-73qy-vercel-app-3.png',
+    image: 'https://i.ibb.co.com/ycN2NdYC/import-export-hub-latest-73qy-vercel-app-6.png',
     technologies: [
       'React',
       'Node.js',
